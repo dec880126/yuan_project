@@ -18,12 +18,6 @@
 # 繰り返しの回数が平均でどの程度か計測し，その理由を考察しなさい
 import random
 
-# x = random.randint(1, 10)
-# eps = 0.01
-
-# low = 1.0
-# high = x
-# sol = (low+high)/2.0    #5.5
 sum = 0
 t = 10001
 do = 25
