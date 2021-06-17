@@ -6,11 +6,16 @@ class SimulateSaving():
         type interestRate: float
         type annualSalary: int
         """   
+        self.totalCost = totalCost
+        self.portionDownPayment = portionDownPayment
         self.totalCost = int(totalCost)
         self.portionDownPayment = float(portionDownPayment)
         self.interestRate = float(interestRate)
         self.annualSalary = int(annualSalary)
     
+    def __str__(self):
+        return f"{self.totalCost}, {self.portionDownPayment}, {self.interestRate}, {self.annualSalary}"
+        
     def simulate(self, portionSavings = 0.1) -> int:
         """
         type portionSavings: float
