@@ -1,5 +1,5 @@
 class SimulateSaving():
-    def __init__(self, totalCost = 1000000, portionDownPayment = 0.25, interestRate = 0.04, annualSalary = 120000,):
+    def __init__(self, totalCost = 1000000, portionDownPayment = 0.25, interestRate = 0.04, annualSalary = 120000):
         """
         type totalCost: int
         type portionDownPayment: float
@@ -45,9 +45,12 @@ class SearchSavingsRate(SimulateSaving):
             month = super().simulate(portionSavings)                # super(): use the function that defined in mother's class
             portionSavings += 0.0005                                # increase the portionSavings by 0.0005
         return portionSavings
-        
+
+annualSalary = int(input("annualSalary?"))
+totalCost = int(input("totalCost?"))
+
 #publish object
-search = SearchSavingsRate()
+search = SearchSavingsRate(annualSalary = annualSalary, totalCost = totalCost)
 
 #Parameter
 monthsToSave = 36
