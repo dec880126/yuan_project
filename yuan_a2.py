@@ -12,7 +12,7 @@
 #         low=sol
 #     else :
 #         high=sol
-#     sol=(low+high)/2.0    
+#     sol=(low+high)/2.0
 #     print(i,"近似値",sol,"復元誤差",abs(x-sol**3))
 # 近似解が求められるよう，プログラムを修正しなさい．
 # 繰り返しの回数が平均でどの程度か計測し，その理由を考察しなさい
@@ -26,23 +26,23 @@ for x in range(1, t):
     eps = 0.00001
     low = 1.0
     high = x
-    sol = (low+high)/2.0    #5.5
-    for i in range(do) :
+    sol = (low + high) / 2.0  # 5.5
+    for i in range(do):
         if i == 24:
             if24 += 1
-        if(abs(x - sol**3) > eps) :
-            if  sol**3 < x:
+        if abs(x - sol ** 3) > eps:
+            if sol ** 3 < x:
                 temp = sol
-                sol = (sol + high)/2
+                sol = (sol + high) / 2
                 low = temp
             else:
                 temp = sol
-                sol = (sol + low)/2
+                sol = (sol + low) / 2
                 high = temp
         else:
             break
-    
-    print(x,"近似値",sol,"復元誤差",abs(x-sol**3))
+
+    print(x, "近似値", sol, "復元誤差", abs(x - sol ** 3))
     print("Total Run:" + str(i) + "times")
     print("--------------------")
     sum += i
