@@ -22,25 +22,27 @@
 import random
 from timeit import timeit
 
+
 def main():
-    x=random.randint(1,10)
-    eps=0.01
-    step=0.01
-    sol=0
-    
+    x = random.randint(1, 10)
+    eps = 0.01
+    step = 0.01
+    sol = 0
+
     min = 0
-    while True :
-        condition = abs(x-sol**3)
-        if(condition > eps) :
-            sol = sol + step
+    while True:
+        condition = abs(x - sol ** 3)
+        if condition > eps:
+            sol += step
             if condition > min and min != 0:
                 break
             min = condition
-        else :
+        else:
             break
-    print(x,"近似解",sol,"近似誤差",abs(x-sol**3))
+    print(x, "近似解", sol, "近似誤差", abs(x - sol ** 3))
 
-print(str(timeit('main()', 'from __main__ import main', number = 1)) + " sec")
+
+print(str(timeit("main()", "from __main__ import main", number=1)) + " sec")
 
 # version 2
 # import random
