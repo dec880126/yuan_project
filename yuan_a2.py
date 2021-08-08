@@ -22,27 +22,25 @@ sum = 0
 t = 10001
 do = 25
 if24 = 0
+eps = 0.00001
 for x in range(1, t):
-    eps = 0.00001
     low = 1.0
     high = x
     sol = (low + high) / 2.0  # 5.5
     for i in range(do):
         if i == 24:
             if24 += 1
-        if abs(x - sol ** 3) > eps:
-            if sol ** 3 < x:
-                temp = sol
-                sol = (sol + high) / 2
-                low = temp
-            else:
-                temp = sol
-                sol = (sol + low) / 2
-                high = temp
-        else:
+        if abs(high - sol ** 3) <= eps:
             break
 
-    print(x, "近似値", sol, "復元誤差", abs(x - sol ** 3))
+        temp = sol
+        if sol ** 3 < high:
+            sol = (sol + high) / 2
+            low = temp
+        else:
+            sol = (sol + low) / 2
+            high = temp
+    print(high, "近似値", sol, "復元誤差", abs(high - sol ** 3))
     print("Total Run:" + str(i) + "times")
     print("--------------------")
     sum += i
